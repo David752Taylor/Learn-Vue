@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+import './styles/index.css'
 
 Vue.config.productionTip = false
-
-//全局注册指令
-
 
 new Vue({
   render: h => h(App),

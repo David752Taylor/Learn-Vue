@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <MyTable>
+    </MyTable>
+    <MyTable>
+    </MyTable>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MyTable from './components/MyTable.vue'
 export default {
-  name: 'App',
+  data () {
+    return {
+      list: [
+        { id: 1, name: '张小花', age: 18 },
+        { id: 2, name: '孙大明', age: 19 },
+        { id: 3, name: '刘德忠', age: 17 },
+      ],
+      list2: [
+        { id: 1, name: '赵小云', age: 18 },
+        { id: 2, name: '刘蓓蓓', age: 19 },
+        { id: 3, name: '姜肖泰', age: 17 },
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    MyTable
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
