@@ -4,14 +4,7 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 //全局注册指令
-Vue.directive('focus', {
-  inserted(el) {
-    el.focus()
-  },
-  // "update"(el,binding){
-  //   el.focus()
-  // }
-})
+
 
 new Vue({
   render: h => h(App),
