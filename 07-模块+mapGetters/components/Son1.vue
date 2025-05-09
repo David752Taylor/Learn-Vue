@@ -17,11 +17,7 @@
     <hr>
     <div>访问模块 state</div>
     <div>{{ $store.state.user.userInfo.name }}</div>
-    <button @click="updateUser">更新个人信息</button>
-    <button @click="updateUser2">1s后更新个人信息</button>
     <div>{{ $store.state.setting.theme }}</div>
-    <button @click="updateTheme">更新主题色</button>
-    <button @click="updateTheme2">1s后更新主题色</button>
 
     <hr>
     <div>访问模块 getters</div>
@@ -43,24 +39,9 @@ export default {
 
     handleChange (n) {
       this.$store.dispatch('changeCountAction', n)
-    },
-    updateUser () {
-      this.$store.commit('user/setUser', {
-        name: 'David',
-        age: 25
-      })
-    },
-    updateUser2 () {
-      this.$store.dispatch('user/setUserSecond', { name: 'Alice', age: 28 })
-    },
-    updateTheme () {
-      this.$store.commit('setting/setTheme', 'green')
-    },
-    updateTheme2 () {
-      this.$store.dispatch('setting/setThemeSecond', 'skyblue')
     }
+    // ...mapActions(['changeCountAction'])
   }
-
 }
 </script>
 

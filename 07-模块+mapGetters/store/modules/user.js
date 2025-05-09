@@ -5,18 +5,8 @@ const state = {
   },
   score: 80
 }
-const mutations = {
-  setUser (state, newUserInfo) {
-    state.userInfo = newUserInfo
-  }
-}
-const actions = {
-  setUserSecond (context, newUserInfo) {
-    setTimeout(() => {
-      context.commit('setUser', newUserInfo)
-    }, 1000)
-  }
-}
+const mutations = {}
+const actions = {}
 const getters = {
   UpperCaseName (state) {
     return state.userInfo.name.toUpperCase()

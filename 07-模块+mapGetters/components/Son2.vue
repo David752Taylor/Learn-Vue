@@ -10,12 +10,8 @@
     <button @click="changeTitle('前端程序员')">改标题</button>
 
     <hr>
-    <div>{{ userInfo.name }}</div>
-    <button @click="setUser({name:'tttt',age: 80})">更新个人信息</button>
-    <button @click="setUserSecond({name:'xxxx',age: 40})">1s后更新个人信息</button>
+    <div>{{ user.userInfo.name }}</div>
     <div>{{ setting.theme }}</div>
-    <button @click="setTheme('dark')">更新主题色</button>
-    <button @click="setThemeSecond('red')">1s后更新主题色</button>
 
     <hr>
     <div>user模块数据：{{ userInfo.name }} - {{ score }}</div>
@@ -31,8 +27,8 @@ import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Son2Com',
   computed: {
-    // 拿到的根级别的映射，是setting对象
-    ...mapState(['count', 'setting']),
+    // 拿到的根级别的映射，是user，setting对象
+    ...mapState(['count', 'user', 'setting']),
 
     // 直接拿到模块内数据，需要namespaced
     ...mapState('user', ['userInfo', 'score']),
@@ -40,18 +36,11 @@ export default {
 
     // 拿到的计算属性
     ...mapGetters(['filterList']),
-    ...mapGetters('user', ['UpperCaseName'])
+    ...mapGetters(['user', ['UpperCaseName']])
   },
   methods: {
-    // 拿到的同步方法
     ...mapMutations(['subCount', 'changeTitle']),
-    ...mapMutations('user', ['setUser']),
-    ...mapMutations('setting', ['setTheme']),
-
-    // 拿到的异步方法
-    ...mapActions(['changeCountAction']),
-    ...mapActions('user', ['setUserSecond']),
-    ...mapActions('setting', ['setThemeSecond'])
+    ...mapActions(['changeCountAction'])
   }
 }
 </script>
