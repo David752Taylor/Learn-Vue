@@ -7,7 +7,13 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      // 开启defineModel（现在不再需配置，当时实验性的功能）
+      // script:{
+      //   // 3.4之后默认启用
+      //   defineModel: true
+      // }
+    }),
     vueDevTools(),
   ],
   resolve: {
